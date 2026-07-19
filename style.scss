@@ -1,0 +1,274 @@
+// 단축어 설정
+:root {
+	--ivory: rgb(240, 240, 222); /* Pantone 9064 C */
+	--olive: rgb(133, 129, 101); /* Pantone 4226 C */
+	--lavender: rgb(210, 195, 215); /* Pantone 9343 C (근사) */
+	--light: rgb(228, 230, 224); /* Pantone 9102 C (근사) */
+}
+
+@font-face {
+	font-family: "Resonay-Text";
+	src: url(./assets/Resonay-Text-Variable-Demo.ttf);
+	font-weight: 100;
+	size-adjust: calc(103%);
+}
+
+// 기본 설정
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+	list-style: none;
+	text-decoration: none;
+
+	position: relative;
+
+	font-family: "SD Jan", "Resonay-Text", serif;
+	font-weight: 100;
+	word-break: keep-all;
+	text-align: center;
+
+	// 가로 scroll 금지
+	touch-action: pan-y; /* 세로만 스와이프 */
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+img {
+	display: block;
+	margin: 0;
+	width: 100%;
+	height: auto;
+}
+
+html {
+	font-size: 16px;
+	letter-spacing: 0.05em;
+	width: 100%;
+	min-height: 100%;
+	background: rgb(235, 223, 239);
+}
+
+body {
+	max-width: 430px;
+
+	margin: 0 auto;
+	background: #f2f3f1;
+
+	h1 {
+		font-size: 1.42em;
+		color: var(--olive);
+		letter-spacing: 0.1em;
+		line-height: 1.7em;
+	}
+
+	h2 {
+		font-size: 1.2em;
+		color: var(--olive);
+		letter-spacing: 0.1em;
+		line-height: 1.85em;
+	}
+
+	p {
+		font-size: 1em;
+		color: var(--olive);
+		line-height: 1.7em;
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.div1 {
+		padding: 2em 0 1.3em;
+		background-color: var(--light);
+
+		gap: 2.2em;
+		p {
+			padding: 0 0.8em;
+		}
+
+		#glyph01 {
+			width: 2.5em;
+			height: auto;
+			position: relative;
+			left: 2em;
+			top: -0.6em;
+			color: aqua;
+		}
+	}
+
+	.div2 {
+		background-image: url(./assets/2_13130012.jpg);
+		background-size: cover;
+		background-position: center;
+
+		height: 40em;
+		padding: 3.7em 0;
+
+		h1 {
+			margin-bottom: 1rem;
+		}
+
+		a {
+			color: var(--olive);
+			line-height: 1.7em;
+			text-decoration: underline;
+		}
+
+		#parking {
+			position: absolute;
+			bottom: 1.6em;
+			width: 100%;
+
+			color: white;
+		}
+	}
+
+	.div3 {
+		width: 100%;
+		height: 11.5em;
+		flex-direction: row;
+
+		#glyph02 {
+			width: 2.6em;
+
+			position: absolute;
+			top: -1.2em;
+			right: 1.8em;
+			z-index: 1000;
+		}
+
+		.contact {
+			flex: 1; // 반반
+			display: flex;
+			gap: 0.4em;
+			padding: 1.8em 0;
+
+			a {
+				position: absolute;
+				bottom: 1.7em;
+				width: 100%;
+				text-decoration: underline;
+				padding-bottom: 0.1em;
+			}
+		}
+
+		.JH {
+			background-color: var(--olive);
+			color: var(--ivory);
+			h1,
+			p {
+				color: var(--ivory);
+			}
+		}
+
+		.YH {
+			background-color: var(--lavender);
+			color: var(--olive);
+		}
+	}
+
+	.div4 {
+		width: 100%;
+		height: auto;
+		background-color: var(--ivory);
+		padding: 2.5em 1em;
+	}
+
+	.div5 {
+		flex-direction: row;
+		div {
+			flex: 1;
+		}
+		div:nth-child(2) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: var(--light);
+			img {
+				width: 70%;
+			}
+		}
+	}
+
+	.div6 {
+		padding: 2em 1em;
+		width: 100%;
+		gap: 1em;
+		background: #f2f3f1;
+
+		.div6-1 {
+			width: 100%;
+
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			gap: 1em;
+
+			div {
+				min-width: 0;
+				height: 100%;
+			}
+
+			div:first-child {
+				flex: 0 0 33%;
+				margin-right: 2em;
+			}
+			> div:last-child {
+				flex: 1;
+			}
+
+			img {
+				display: block;
+				min-width: 0;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+
+		#img6-4gif {
+			img {
+				width: 70%;
+			}
+		}
+
+		#img6-5 {
+			img {
+				display: block;
+				width: 68%;
+				margin-top: 1.5em;
+				margin-left: auto;
+			}
+		}
+
+		#img6-6 {
+			width: 33%;
+			display: block;
+			margin: 1.5em auto;
+		}
+
+		#glyph03 {
+			width: 1.8em;
+			margin: 1em auto;
+		}
+	}
+}
+
+@media (max-width: 430px) {
+	html {
+		font-size: 3.8vw;
+	}
+}
