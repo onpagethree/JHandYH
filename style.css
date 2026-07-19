@@ -19,8 +19,8 @@
   list-style: none;
   text-decoration: none;
   position: relative;
-  font-family: "SD Jan", "Resonay-Text", serif;
-  font-weight: 100;
+  font-family: "Resonay-Text", "SD Jan", serif;
+  font-weight: 400;
   word-break: keep-all;
   text-align: center;
   touch-action: pan-y; /* 세로만 스와이프 */
@@ -204,12 +204,11 @@ body .div6 .div6-1 img {
   object-fit: cover;
 }
 body .div6 #img6-4gif img {
-  width: 70%;
+  width: 74%;
 }
 body .div6 #img6-5 img {
   display: block;
   width: 68%;
-  margin-top: 1.5em;
   margin-left: auto;
 }
 body .div6 #img6-6 {
