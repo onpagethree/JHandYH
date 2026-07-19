@@ -20,7 +20,7 @@
   text-decoration: none;
   position: relative;
   font-family: "Resonay-Text", "SD Jan", serif;
-  font-weight: 400;
+  font-weight: 100;
   word-break: keep-all;
   text-align: center;
   touch-action: pan-y; /* 세로만 스와이프 */
