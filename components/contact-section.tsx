@@ -10,6 +10,9 @@ const giftSideLabel: Record<GiftSide, string> = {
   bride: wedding.gift.bride.title,
 };
 
+const getAccountCopyText = (bank: string, accountNumber: string) =>
+  [bank, accountNumber].filter(Boolean).join(" ");
+
 export function ContactSection() {
   const [selectedSide, setSelectedSide] = useState<GiftSide | null>(null);
   const [toastMessage, setToastMessage] = useState("");
@@ -43,16 +46,16 @@ export function ContactSection() {
     return () => window.clearTimeout(timer);
   }, [toastMessage]);
 
-  const copyAccount = async (accountNumber: string) => {
-    if (!accountNumber) {
+  const copyAccount = async (copyText: string) => {
+    if (!copyText) {
       return false;
     }
 
     try {
-      await navigator.clipboard.writeText(accountNumber);
+      await navigator.clipboard.writeText(copyText);
     } catch {
       const textarea = document.createElement("textarea");
-      textarea.value = accountNumber;
+      textarea.value = copyText;
       textarea.style.position = "fixed";
       textarea.style.opacity = "0";
       document.body.appendChild(textarea);
@@ -65,12 +68,12 @@ export function ContactSection() {
     return true;
   };
 
-  const openKakaoPay = async (accountNumber: string, kakaoPayUrl: string) => {
-    if (!accountNumber || !kakaoPayUrl) {
+  const openKakaoPay = async (copyText: string, kakaoPayUrl: string) => {
+    if (!copyText || !kakaoPayUrl) {
       return;
     }
 
-    await copyAccount(accountNumber);
+    await copyAccount(copyText);
     window.location.href = kakaoPayUrl;
   };
 
@@ -125,6 +128,10 @@ export function ContactSection() {
               {wedding.gift[selectedSide].accounts.map((account) => {
                 const hasAccount = Boolean(account.accountNumber);
                 const hasKakaoPay = Boolean(account.kakaoPayUrl);
+                const accountCopyText = getAccountCopyText(
+                  account.bank,
+                  account.accountNumber,
+                );
 
                 return (
                   <div className="gift-account" key={`${selectedSide}-${account.relation}`}>
@@ -143,7 +150,7 @@ export function ContactSection() {
                       <button
                         type="button"
                         disabled={!hasAccount}
-                        onClick={() => copyAccount(account.accountNumber)}
+                        onClick={() => copyAccount(accountCopyText)}
                         aria-label={`${account.name} 계좌번호 복사`}
                       >
                         ⧉
@@ -152,7 +159,7 @@ export function ContactSection() {
                         <button
                           type="button"
                           disabled={!hasAccount}
-                          onClick={() => openKakaoPay(account.accountNumber, account.kakaoPayUrl)}
+                          onClick={() => openKakaoPay(accountCopyText, account.kakaoPayUrl)}
                           aria-label={`${account.name} 카카오페이 송금`}
                         >
                           ₩
