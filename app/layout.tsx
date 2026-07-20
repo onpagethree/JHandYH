@@ -3,8 +3,17 @@ import "./globals.css";
 import { assetPath } from "@/lib/asset-path";
 
 export const metadata: Metadata = {
-  title: "JehyunAndYounghyun",
-  description: "김제현 송영현 결혼식 초대장",
+  title: "제현 & 영현",
+  description: "2026년 10월 17일 12시 30분",
+  openGraph: {
+    title: "제현 & 영현",
+    description: "2026년 10월 17일 12시 30분",
+  },
+  twitter: {
+    card: "summary",
+    title: "제현 & 영현",
+    description: "2026년 10월 17일 12시 30분",
+  },
 };
 
 export default function RootLayout({
