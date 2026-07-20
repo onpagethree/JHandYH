@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+:root {
+  --ivory: rgb(240, 240, 222);
+  --olive: rgb(133, 129, 101);
+  --lavender: rgb(210, 195, 215);
+  --light: rgb(228, 230, 224);
+}
+
+@font-face {
+  font-family: "Resonay-Text";
+  src: url("/assets/Resonay-Text-Variable-Demo.ttf");
+  font-weight: 100;
+  size-adjust: 103%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  font-family: "Resonay-Text", "SD Jan", serif;
+  font-weight: 100;
+  word-break: keep-all;
+  text-align: center;
+  touch-action: pan-y;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  width: 100%;
+  min-height: 100%;
+  background: rgb(235, 223, 239);
+}
+
+body {
+  max-width: 430px;
+  margin: 0 auto;
+  background: #f2f3f1;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 1.42em;
+  color: var(--olive);
+  letter-spacing: 0.1em;
+  line-height: 1.7em;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: var(--olive);
+  letter-spacing: 0.1em;
+  line-height: 1.85em;
+}
+
+p {
+  font-size: 1em;
+  color: var(--olive);
+  line-height: 1.7em;
+}
+
+section,
+section div {
+  display: flex;
+  flex-direction: column;
+}
+
+.div1 {
+  padding: 2em 0 1.3em;
+  background-color: var(--light);
+  gap: 2.2em;
+}
+
+.div1 p {
+  padding: 0 0.8em;
+}
+
+.div1 #glyph01 {
+  width: 2.5em;
+  height: auto;
+  position: relative;
+  left: 2em;
+  top: -0.6em;
+  color: aqua;
+}
+
+.div2 {
+  background-image: url("/assets/2_13130012.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 40em;
+  padding: 3.7em 0;
+}
+
+.div2 h1 {
+  margin-bottom: 1rem;
+}
+
+.div2 a {
+  color: var(--olive);
+  line-height: 1.7em;
+  text-decoration: underline;
+}
+
+.div2 #parking {
+  position: absolute;
+  bottom: 1.6em;
+  width: 100%;
+  color: white;
+}
+
+.div3 {
+  width: 100%;
+  height: 11.5em;
+  flex-direction: row;
+}
+
+.div3 #glyph02 {
+  width: 2.6em;
+  position: absolute;
+  top: -1.2em;
+  right: 1.8em;
+  z-index: 1000;
+}
+
+.div3 .contact {
+  flex: 1;
+  display: flex;
+  gap: 0.4em;
+  padding: 1.8em 0;
+}
+
+.div3 .contact a {
+  position: absolute;
+  bottom: 1.7em;
+  width: 100%;
+  text-decoration: underline;
+  padding-bottom: 0.1em;
+}
+
+.div3 .JH {
+  background-color: var(--olive);
+  color: var(--ivory);
+}
+
+.div3 .JH h1,
+.div3 .JH p {
+  color: var(--ivory);
+}
+
+.div3 .YH {
+  background-color: var(--lavender);
+  color: var(--olive);
+}
+
+.div4 {
+  width: 100%;
+  height: auto;
+  background-color: var(--ivory);
+  padding: 2.5em 1em;
+}
+
+.div5 {
+  flex-direction: row;
+}
+
+.div5 div {
+  flex: 1;
+}
+
+.div5 div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light);
+}
+
+.div5 div:nth-child(2) img {
+  width: 70%;
+}
+
+.div6 {
+  padding: 2em 1em;
+  width: 100%;
+  gap: 1em;
+  background: #f2f3f1;
+}
+
+.div6 .div6-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.div6 .div6-1 div {
+  min-width: 0;
+  height: 100%;
+}
+
+.div6 .div6-1 div:first-child {
+  flex: 0 0 33%;
+  margin-right: 2em;
+}
+
+.div6 .div6-1 > div:last-child {
+  flex: 1;
+}
+
+.div6 .div6-1 img {
+  display: block;
+  min-width: 0;
+  height: auto;
+  object-fit: cover;
+}
+
+.div6 #img6-4gif img {
+  width: 74%;
+}
+
+.div6 #img6-5 img {
+  display: block;
+  width: 68%;
+  margin-left: auto;
+}
+
+.div6 #img6-6 {
+  width: 33%;
+  display: block;
+  margin: 1.5em auto;
+}
+
+.div6 #glyph03 {
+  width: 1.8em;
+  margin: 1em auto;
+}
+
+@media (max-width: 430px) {
+  html {
+    font-size: 3.8vw;
+  }
+}
