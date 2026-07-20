@@ -2,7 +2,10 @@ import { wedding } from "@/data/wedding";
 
 export function EventSection() {
   return (
-    <section className="div2">
+    <section
+      className="div2"
+      style={{ backgroundImage: `url("${wedding.assets.eventBackground}")` }}
+    >
       <h1>
         {wedding.event.date}
         <br />

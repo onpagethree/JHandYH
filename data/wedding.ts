@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/asset-path";
+
 export const wedding = {
   couple: {
     groom: {
@@ -78,21 +80,21 @@ export const wedding = {
     },
   },
   assets: {
-    glyph01: "/assets/glyph01.svg",
-    glyph02: "/assets/glyph02.svg",
-    glyph03: "/assets/glyph03.svg",
-    intro: "/assets/1_12900008_m.jpg",
-    eventBackground: "/assets/2_13130012.jpg",
-    main: "/assets/3_12900023.png",
+    glyph01: assetPath("/assets/glyph01.svg"),
+    glyph02: assetPath("/assets/glyph02.svg"),
+    glyph03: assetPath("/assets/glyph03.svg"),
+    intro: assetPath("/assets/1_12900008_m.jpg"),
+    eventBackground: assetPath("/assets/2_13130012.jpg"),
+    main: assetPath("/assets/3_12900023.png"),
     gallery: [
-      "/assets/4_MG_4995.png",
-      "/assets/5_20260511_8.jpg",
-      "/assets/6_12900026.jpg",
-      "/assets/7_12900039.jpg",
-      "/assets/8_13150017.jpg",
-      "/assets/div5_04.gif",
-      "/assets/9_13150018.jpg",
-      "/assets/10_20260511_5.jpg",
+      assetPath("/assets/4_MG_4995.png"),
+      assetPath("/assets/5_20260511_8.jpg"),
+      assetPath("/assets/6_12900026.jpg"),
+      assetPath("/assets/7_12900039.jpg"),
+      assetPath("/assets/8_13150017.jpg"),
+      assetPath("/assets/div5_04.gif"),
+      assetPath("/assets/9_13150018.jpg"),
+      assetPath("/assets/10_20260511_5.jpg"),
     ],
   },
 } as const;
