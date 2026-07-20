@@ -148,14 +148,16 @@ export function ContactSection() {
                       >
                         ⧉
                       </button>
-                      <button
-                        type="button"
-                        disabled={!hasAccount || !hasKakaoPay}
-                        onClick={() => openKakaoPay(account.accountNumber, account.kakaoPayUrl)}
-                        aria-label={`${account.name} 카카오페이 송금`}
-                      >
-                        ₩
-                      </button>
+                      {hasKakaoPay ? (
+                        <button
+                          type="button"
+                          disabled={!hasAccount}
+                          onClick={() => openKakaoPay(account.accountNumber, account.kakaoPayUrl)}
+                          aria-label={`${account.name} 카카오페이 송금`}
+                        >
+                          ₩
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 );
