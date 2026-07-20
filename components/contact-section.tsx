@@ -45,7 +45,7 @@ export function ContactSection() {
 
   const copyAccount = async (accountNumber: string) => {
     if (!accountNumber) {
-      return;
+      return false;
     }
 
     try {
@@ -62,6 +62,16 @@ export function ContactSection() {
     }
 
     setToastMessage("계좌번호를 복사했어요.");
+    return true;
+  };
+
+  const openKakaoPay = async (accountNumber: string, kakaoPayUrl: string) => {
+    if (!accountNumber || !kakaoPayUrl) {
+      return;
+    }
+
+    await copyAccount(accountNumber);
+    window.location.href = kakaoPayUrl;
   };
 
   return (
@@ -138,14 +148,14 @@ export function ContactSection() {
                       >
                         ⧉
                       </button>
-                      <a
-                        href={hasKakaoPay ? account.kakaoPayUrl : undefined}
-                        aria-disabled={!hasKakaoPay}
-                        tabIndex={hasKakaoPay ? 0 : -1}
+                      <button
+                        type="button"
+                        disabled={!hasAccount || !hasKakaoPay}
+                        onClick={() => openKakaoPay(account.accountNumber, account.kakaoPayUrl)}
                         aria-label={`${account.name} 카카오페이 송금`}
                       >
                         ₩
-                      </a>
+                      </button>
                     </div>
                   </div>
                 );
