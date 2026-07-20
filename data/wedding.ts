@@ -17,6 +17,66 @@ export const wedding = {
     naverMapUrl: "https://naver.me/xtNyjOgy",
     kakaoMapUrl: "https://kko.to/OTYRI91GQP",
   },
+  gift: {
+    groom: {
+      title: "신랑측",
+      accounts: [
+        {
+          relation: "부",
+          hanja: "父",
+          name: "김명국",
+          bank: "우리은행",
+          accountNumber: "02510271202501",
+          kakaoPayUrl: "",
+        },
+        {
+          relation: "모",
+          hanja: "母",
+          name: "김정희",
+          bank: "신한은행",
+          accountNumber: "110 448 016880",
+          kakaoPayUrl: "",
+        },
+        {
+          relation: "본인",
+          hanja: "",
+          name: "김제현",
+          bank: "카카오뱅크",
+          accountNumber: "3333-02-4025793",
+          kakaoPayUrl: "",
+        },
+      ],
+    },
+    bride: {
+      title: "신부측",
+      accounts: [
+        {
+          relation: "부",
+          hanja: "父",
+          name: "송두석",
+          bank: "",
+          accountNumber: "",
+          kakaoPayUrl: "",
+        },
+        {
+          relation: "모",
+          hanja: "母",
+          name: "한정희",
+          bank: "",
+          accountNumber: "",
+          kakaoPayUrl: "",
+        },
+        {
+          relation: "본인",
+          hanja: "",
+          name: "송영현",
+          bank: "",
+          accountNumber: "",
+          kakaoPayUrl: "",
+        },
+      ],
+    },
+  },
   assets: {
     glyph01: "/assets/glyph01.svg",
     glyph02: "/assets/glyph02.svg",

@@ -35,6 +35,14 @@ a:visited {
   color: inherit;
 }
 
+button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -58,6 +66,10 @@ body {
   max-width: 430px;
   margin: 0 auto;
   background: #f2f3f1;
+}
+
+body.is-modal-open {
+  overflow: hidden;
 }
 
 main {
@@ -155,7 +167,7 @@ section div {
   padding: 1.8em 0;
 }
 
-.div3 .contact a {
+.div3 .contact button {
   position: absolute;
   bottom: 1.7em;
   width: 100%;
@@ -176,6 +188,176 @@ section div {
 .div3 .YH {
   background-color: var(--lavender);
   color: var(--olive);
+}
+
+.gift-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4em;
+}
+
+.gift-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(55, 54, 43, 0.34);
+  animation: giftBackdropIn 180ms ease-out both;
+}
+
+.gift-modal-panel {
+  width: min(100%, 386px);
+  max-height: calc(100vh - 2.8em);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15em;
+  padding: 1.55em 1.1em 1.15em;
+  background: #f2f3f1;
+  box-shadow: 0 1.2em 3em rgba(55, 54, 43, 0.18);
+  animation: giftPanelIn 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.gift-modal-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  padding: 0 2.4em;
+}
+
+.gift-modal-header p {
+  font-size: 0.9em;
+}
+
+.gift-modal-header h2 {
+  font-size: 1.22em;
+}
+
+.gift-modal-close {
+  position: absolute;
+  top: -0.15em;
+  right: 0;
+  width: 2.2em;
+  height: 2.2em;
+  color: var(--olive);
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.gift-account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.gift-account {
+  display: grid;
+  grid-template-columns: 4.7em minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.9em 0;
+  border-top: 1px solid rgba(133, 129, 101, 0.22);
+}
+
+.gift-account:last-child {
+  border-bottom: 1px solid rgba(133, 129, 101, 0.22);
+}
+
+.gift-account-person {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.gift-account-person span {
+  color: var(--olive);
+  font-size: 0.82em;
+  line-height: 1.45;
+}
+
+.gift-account-person strong {
+  color: var(--olive);
+  font-size: 1.08em;
+  font-weight: 100;
+  line-height: 1.45;
+}
+
+.gift-account-number {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12em;
+  min-width: 0;
+}
+
+.gift-account-number span {
+  color: rgba(133, 129, 101, 0.78);
+  font-size: 0.78em;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.gift-account-number p {
+  color: var(--olive);
+  font-size: 1em;
+  line-height: 1.35;
+  text-align: left;
+  word-break: break-all;
+}
+
+.gift-account-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 0.42em;
+}
+
+.gift-account-actions button,
+.gift-account-actions a {
+  width: 2.15em;
+  height: 2.15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(133, 129, 101, 0.4);
+  border-radius: 50%;
+  color: var(--olive);
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.gift-account-actions button:disabled,
+.gift-account-actions a[aria-disabled="true"] {
+  opacity: 0.34;
+  cursor: default;
+  pointer-events: none;
+}
+
+.gift-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 48px;
+  z-index: 2100;
+  width: max-content;
+  max-width: calc(100% - 3em);
+  padding: 0.7em 1em;
+  border-radius: 999px;
+  background: rgba(55, 54, 43, 0.84);
+  color: #fff;
+  font-size: 0.88em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.5em);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.gift-toast.is-show {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .div4 {
@@ -264,5 +446,25 @@ section div {
 @media (max-width: 430px) {
   html {
     font-size: 3.8vw;
+  }
+}
+
+@keyframes giftBackdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes giftPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.8em) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
