@@ -46,7 +46,7 @@ export function ContactSection() {
     return () => window.clearTimeout(timer);
   }, [toastMessage]);
 
-  const copyAccount = async (copyText: string) => {
+  const copyTextToClipboard = async (copyText: string) => {
     if (!copyText) {
       return false;
     }
@@ -64,17 +64,23 @@ export function ContactSection() {
       textarea.remove();
     }
 
-    setToastMessage("계좌번호를 복사했어요.");
     return true;
   };
 
-  const openKakaoPay = async (copyText: string, kakaoPayUrl: string) => {
-    if (!copyText || !kakaoPayUrl) {
+  const copyAccount = async (copyText: string) => {
+    const didCopy = await copyTextToClipboard(copyText);
+
+    if (didCopy) {
+      setToastMessage("계좌번호를 복사했어요.");
+    }
+  };
+
+  const openKakaoPay = (kakaoPayUrl: string) => {
+    if (!kakaoPayUrl) {
       return;
     }
 
-    await copyAccount(copyText);
-    window.location.href = kakaoPayUrl;
+    window.open(kakaoPayUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -159,7 +165,7 @@ export function ContactSection() {
                         <button
                           type="button"
                           disabled={!hasAccount}
-                          onClick={() => openKakaoPay(accountCopyText, account.kakaoPayUrl)}
+                          onClick={() => openKakaoPay(account.kakaoPayUrl)}
                           aria-label={`${account.name} 카카오페이 송금`}
                         >
                           ₩
