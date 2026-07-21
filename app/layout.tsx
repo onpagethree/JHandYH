@@ -3,17 +3,17 @@ import "./globals.css";
 import { assetPath } from "@/lib/asset-path";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://onpagethree.github.io"),
+  metadataBase: new URL("https://www.jh-yh.kr"),
   applicationName: "제현 & 영현",
   title: "제현 & 영현",
   description: "2026년 10월 17일 12시 30분",
   alternates: {
-    canonical: "/JHandYH/",
+    canonical: "/",
   },
   openGraph: {
     title: "제현 & 영현",
     description: "2026년 10월 17일 12시 30분",
-    url: "/JHandYH/",
+    url: "/",
     siteName: "제현 & 영현",
     locale: "ko_KR",
     type: "website",

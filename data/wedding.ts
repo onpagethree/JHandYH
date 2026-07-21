@@ -18,7 +18,7 @@ export const wedding = {
     parking: "주차 가능합니다.",
     naverMapUrl: "https://naver.me/xtNyjOgy",
     naverMapAppUrl:
-      "nmap://search?query=%ED%95%9C%EA%B5%AD%EC%9D%80%ED%96%89%20%EC%A4%91%EA%B5%AC%20%EB%82%A8%EB%8C%80%EB%AC%B8%EB%A1%9C%2039&appname=onpagethree.github.io%2FJHandYH",
+      "nmap://search?query=%ED%95%9C%EA%B5%AD%EC%9D%80%ED%96%89%20%EC%A4%91%EA%B5%AC%20%EB%82%A8%EB%8C%80%EB%AC%B8%EB%A1%9C%2039&appname=www.jh-yh.kr",
     kakaoMapUrl: "https://kko.to/OTYRI91GQP",
   },
   gift: {
